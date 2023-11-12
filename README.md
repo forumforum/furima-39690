@@ -7,10 +7,10 @@
 | email              | string              | null: false, unique: true     |
 | encrypted_password | string              | null: false                   |
 | nickname           | string              | null: false                   |
-| last_name          | text                | null: false                   |
-| first_name         | text                | null: false                   |
-| last_name_kana     | text                | null: false                   |
-| first_name_kana    | text                | null: false                   |
+| last_name          | String              | null: false                   |
+| first_name         | String              | null: false                   |
+| last_name_kana     | String              | null: false                   |
+| first_name_kana    | String              | null: false                   |
 | birthday           | date                | null: false                   |
 
 ### Association
@@ -23,14 +23,14 @@
 
 | Column             | Type                | Options                        |
 |--------------------|---------------------|--------------------------------|
-| user_id            | reference           | null: false, foreign_key: true |
+| user               | references          | null: false, foreign_key: true |
 | name               | string              | null: false                    |
 | description        | text                | null: false                    |
-| category           | integer             | null: false                    |
-| status             | integer             | null: false                    |
-| shipping_cost      | integer             | null: false                    |
-| prefecture         | integer             | null: false                    |
-| delivery_time      | integer             | null: false                    |
+| category_id        | integer             | null: false                    |
+| status_id          | integer             | null: false                    |
+| shipping_cost_id   | integer             | null: false                    |
+| prefecture_id      | integer             | null: false                    |
+| delivery_time_id   | integer             | null: false                    |
 | price              | integer             | null: false                    |
 
 
@@ -44,8 +44,8 @@
 
 | Column              | Type               | Options                        |
 |---------------------|--------------------|--------------------------------|
-| user_id             | references         | null: false, foreign_key: true |
-| item_id             | references         | null: false, foreign_key: true |
+| user                | references         | null: false, foreign_key: true |
+| item                | references         | null: false, foreign_key: true |
 
 ### Association
 
@@ -57,9 +57,9 @@
 
 | Column               | Type              | Options                        |
 |----------------------|-------------------|--------------------------------|
-| order_id             | reference         | null: false, foreign_key: true |
+| order                | references        | null: false, foreign_key: true |
 | postcode             | string            | null: false                    |
-| prefecture           | integer           | null: false                    |
+| prefecture_id        | integer           | null: false                    |
 | city                 | string            | null: false                    |
 | block                | string            | null: false                    |
 | building             | string            |                                |
@@ -74,8 +74,8 @@
 
 | Column               | Type              | Options                        |
 |----------------------|-------------------|--------------------------------|
-| user_id              | reference         | null: false, foreign_key: true |
-| item_id              | reference         | null: false, foreign_key: true |
+| user                 | references        | null: false, foreign_key: true |
+| item                 | references        | null: false, foreign_key: true |
 | text                 | text              | null: false                    |
 
 ### Association
