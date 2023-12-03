@@ -9,6 +9,8 @@ class Item < ApplicationRecord
   belongs_to :shipping_cost
   belongs_to :delivery_time
 
+  has_one_attached :image
+
   with_options presence: true do
     validates :user_id
     validates :image
