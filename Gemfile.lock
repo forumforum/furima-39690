@@ -306,7 +306,6 @@ DEPENDENCIES
   rails (~> 7.0.0)
   rspec-rails
   rubocop
-  ruby-vips
   selenium-webdriver
   sprockets-rails
   stimulus-rails
