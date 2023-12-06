@@ -72,6 +72,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -88,3 +89,5 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 gem 'active_hash'
+
+gem 'pry-rails'
