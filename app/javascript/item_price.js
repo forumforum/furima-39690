@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("OK")
   const priceInput = document.getElementById("item-price");
   if (priceInput) {
     priceInput.addEventListener("input", () => {

@@ -1,7 +1,6 @@
 require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
-    @user = FactoryBot.create(:user)
     @item = FactoryBot.build(:item, user_id: @user.id)
   end
   describe '商品情報の保存' do
