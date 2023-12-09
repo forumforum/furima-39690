@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema[7.0].define(version: 2023_11_26_075802) do
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -58,6 +59,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_26_075802) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_141117) do
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "nickname", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+>>>>>>> Stashed changes
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
@@ -72,7 +80,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_26_075802) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< Updated upstream
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
+=======
+>>>>>>> Stashed changes
 end
