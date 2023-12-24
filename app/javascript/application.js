@@ -4,4 +4,4 @@ import "controllers"
 // import "./items/price"
 // import "./orders/card"
 import "item_price"
-
+import "card"
