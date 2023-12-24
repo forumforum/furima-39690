@@ -50,6 +50,11 @@ RSpec.describe OrderPayment, type: :model do
         @order_payment.valid?
         expect(@order_payment.errors.full_messages).to include("Phone number can't be blank")
       end
+      it 'phone_numberが9桁以下では保存できない' do
+        @order_payment.phone_number = '123456789'
+        @order_payment.valid?
+        expect(@order_payment.errors.full_messages).to include('Phone number is too short')
+      end
       it 'postcodeはハイフンがないと保存できない' do
         @order_payment.postcode = '1234567'
         @order_payment.valid?
