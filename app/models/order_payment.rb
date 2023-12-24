@@ -16,8 +16,8 @@ class OrderPayment
   validates :prefecture_id, numericality: { other_than: 0 }
 
   def save
-    order = Order.create(user_id: user_id, item_id: item_id)
-    Payment.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building,
-                       phone_number: phone_number, order_id: order.id)
+    order = Order.create(user_id:, item_id:)
+    Payment.create(postcode:, prefecture_id:, city:, block:, building:,
+                   phone_number:, order_id: order.id)
   end
 end

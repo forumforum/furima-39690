@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :move_to_index, only: [:index, :create]
 
   def index
-    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+    gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @order_payment = OrderPayment.new
   end
 
@@ -13,9 +13,9 @@ class OrdersController < ApplicationController
     if @order_payment.valid?
       pay_item
       @order_payment.save
-      return redirect_to root_path
+      redirect_to root_path
     else
-      gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+      gon.public_key = ENV['PAYJP_PUBLIC_KEY']
       render 'index', status: :unprocessable_entity
     end
   end
