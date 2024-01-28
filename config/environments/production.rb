@@ -3,6 +3,11 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #追記箇所7～9(コメント機能実装時)
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://【Elastic IP】/cable" 
+  config.action_cable.allowed_request_origins = ['http://【Elastic IP】']
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
