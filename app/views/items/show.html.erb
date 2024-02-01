@@ -82,13 +82,14 @@
     <% @item.comments.each do |comment| %>
       <div class="comment">
         <p class="user-info">
-          <%= comment.user.nickname %>：
+          <%= comment.user.nickname %>
           <% if comment.user.followed_by?(current_user) %>
-            <%=link_to "フォロー中", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :delete } %>
+            <%=link_to "[フォロー中(クリックするとフォローから外れる)]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :delete } %>
           <% else %>
-            <%=link_to "フォローする", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :post } %>
+            <%=link_to "[フォローする]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :post } %>
           <% end %>
         </p>
+        <p>:</p>
         <p><%= comment.text%></p>
       </div>
     <% end %>
