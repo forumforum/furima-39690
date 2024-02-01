@@ -77,16 +77,18 @@
   </div>
   <%# /商品の概要 %>
 
-  <div id="comments">
+<div id="comments">
   <h4 class = comment_title>Coments</h4><br>
     <% @item.comments.each do |comment| %>
       <div class="comment">
         <p class="user-info">
           <%= comment.user.nickname %>
-          <% if comment.user.followed_by?(current_user) %>
-            <%=link_to "[フォロー中(クリックするとフォローから外れる)]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :delete } %>
-          <% else %>
-            <%=link_to "[フォローする]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :post } %>
+          <% if current_user != comment.user %>
+            <% if comment.user.followed_by?(current_user) %>
+              <%=link_to "[フォロー中(クリックするとフォローから外れる)]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :delete } %>
+            <% else %>
+              <%=link_to "[フォローする]", user_relationships_path(comment.user.id),class: "btn", data: { turbo_method: :post } %>
+            <% end %>
           <% end %>
         </p>
         <p>:</p>
@@ -94,6 +96,7 @@
       </div>
     <% end %>
   </div>
+
 
   <div class="comment-box">
     <% if user_signed_in? %>
