@@ -23,4 +23,9 @@ class User < ApplicationRecord
     validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :birthday
   end
+
+  def followed_by?(user)
+    follower =  passive_relationships.find_by(following_id: user.id)
+    return follower.present?
+  end
 end
