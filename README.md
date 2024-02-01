@@ -82,3 +82,10 @@
 
 - belongs_to :user
 - belongs_to :item
+
+## relationships table
+
+| Column               | Type              | Options                        |
+|----------------------|-------------------|--------------------------------|
+| following_id         | references        | null: false, foreign_key: true |
+| follower_id          | text              | null: false, foreign_key: true |
