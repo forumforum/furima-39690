@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-before_action :set_comment
+  before_action :set_comment
 
   def create
     like = current_user.likes.build(comment_id: params[:comment_id])
