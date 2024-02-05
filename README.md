@@ -93,8 +93,8 @@
 
 | Column               | Type              | Options                        |
 |----------------------|-------------------|--------------------------------|
-| following_id         | references        | null: false, foreign_key: true |
-| follower_id          | text              | null: false, foreign_key: true |
+| following_id         | references        | null: false                    |
+| follower_id          | text              | null: false                    |
 
 ### Association
 
